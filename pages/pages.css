@@ -1,0 +1,76 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: red;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+
+.skw-pages {
+  overflow: hidden;
+  position: relative;
+  height: 70vh; }
+
+.skw-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%; }
+  .skw-page__half {
+    position: absolute;
+    top: 0;
+    width: 70%;
+    height: 50vh; }
+    .skw-page__half--left {
+      left: 0px; }
+    .skw-page__half--right {
+      left: 70%; }
+  .skw-page__skewed {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 140%;
+    height: 100%;
+    transform: skewX(-28deg);
+    background: #000; }
+    .skw-page__half--left .skw-page__skewed {
+      left: -40%; }
+    .skw-page__half--right .skw-page__skewed {
+      right: -40%; }
+  .skw-page__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 25%;
+    color: #fff;
+    transform: skewX(28deg);
+    background-size: cover; }
+    .skw-page__half--left .skw-page__content {
+      transform-origin: 100% 0; }
+    .skw-page__half--right .skw-page__content {
+      transform-origin: 0 100%; }
+  .skw-page__heading {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-align: center; }
+  .skw-page__description {
+    font-size: 18px;
+    text-align: center; }
+  .skw-page-2 .skw-page__half--left .skw-page__content {
+    background: #009a00; }
+    .skw-page-2 .skw-page__half--left .skw-page__content .inner-content {
+      background: brown;
+      margin-left: 100px; }
+  .skw-page-2 .skw-page__half--right .skw-page__content {
+    background-image: url("../images/phoneGuy.jpg");
+    width: 50%; }
+
+/*# sourceMappingURL=pages.css.map */
