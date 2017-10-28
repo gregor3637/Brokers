@@ -1,5 +1,21 @@
+var olw,
+    owlPosX,
+    owlPosY,
+    navLeftPosX,
+    navRightPosX,
+    owlMiddleY,
+    owlNavLeftBtn,
+    owlNavRightBtn,
+    owlNavLeftBtnBg,
+    owlNavRightBtnBg,
+    borderThickness,
+    rightdBtnMiddle;
+
+
+
 $(document).ready(function () {
-    var owl = $('.owl-carousel');
+    
+    owl = $('.owl-carousel');
     
     owl.owlCarousel({
         // nav: true,
@@ -7,14 +23,14 @@ $(document).ready(function () {
         autoplay:false,
         autoplayTimeout:1000,
         autoplayHoverPause:false,
-        // margin: 10,
+        margin: 0,
         lazyLoad:true,
         responsive: {
             0: {
                 items: 1
             },
             600: {
-                items: 3
+                items: 2
             },
             1000: {
                 items: 3
@@ -29,10 +45,41 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    $('.myBtn').on('click', function() {
+
+    owlNavLeftBtn = $(".animated-button.left");
+    owlNavRightBtn = $(".animated-button.right");
+
+    var bg = $(".nav-background .left");
+    var bgRight =  $(".nav-background .right");
+    
+    btnH = owlNavRightBtn.height();
+    borderThickness = parseFloat(owlNavRightBtn.css("borderRightWidth")) *2;
+    owlPosX = owl.position().left;
+    owlPosY = owl.position().top;
+    navLeftPosX = 0;
+    navRightPosX = owl.width() - owlNavLeftBtn.width() * 2;
+    owlMiddleY = (owl.height() * 0.5) + owl.position().top - owlNavLeftBtn.height();
+    rightdBtnMiddle = owlMiddleY ;
+
+    owlNavLeftBtn.css({top: owlMiddleY, left: navLeftPosX  -4});
+    owlNavRightBtn.css({top: rightdBtnMiddle, left: navRightPosX  + 4});
+
+    bg.css({top: owlMiddleY, left: navLeftPosX -4});
+    bgRight.css({top: rightdBtnMiddle, left: navRightPosX +4});
+
+
+    
+    owlNavLeftBtn.on('click', function() {
+         owl.trigger('prev.owl');
+         console.log('clickkkk 2');
+    })
+    owlNavRightBtn.on('click', function() {
          owl.trigger('next.owl');
+         console.log('clickkkk 2');
     })
 })
+
+
 
 
 $("#statistics ul li").mouseenter(function() {
@@ -49,9 +96,9 @@ $("#team .images-container").mouseenter(function() {
     $(".pic1").css("transform", "translate(0,0)")
     .css("transition", "0.25s");
     $(".pic2").css("transform", "translate(170px, -170px)")
-    .css("transition", "0.25s");;
+    .css("transition", "0.25s");
     $(".pic3").css("transform", "translate(290px, 0px)")
-    .css("transition", "0.25s");;
+    .css("transition", "0.25s");
 }).mouseleave(function() {
     $(".pic1").css("transform", "translate(30px, -10px)");
     $(".pic2").css("transform", "translate(170px, -120px)");
@@ -103,3 +150,19 @@ var myFunk = function() {
 }
 
 myFunk();
+
+$(window).on("resize", handleResize);
+
+function handleResize() {
+    btnH = owlNavRightBtn.height();
+    borderThickness = parseFloat(owlNavRightBtn.css("borderRightWidth")) *2;
+    owlPosX = owl.position().left;
+    owlPosY = owl.position().top;
+    navLeftPosX = 0;
+    navRightPosX = owl.width() - owlNavLeftBtn.width() * 2;
+    owlMiddleY = (owl.height() * 0.5) + owl.position().top - owlNavLeftBtn.height();
+    rightdBtnMiddle = owlMiddleY ;
+
+    owlNavLeftBtn.css({top: owlMiddleY, left: navLeftPosX});
+    owlNavRightBtn.css({top: rightdBtnMiddle, left: navRightPosX});
+}
