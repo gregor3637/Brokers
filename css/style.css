@@ -107,33 +107,69 @@ header {
 
 #articles {
   background-color: #f5f5f5;
-  height: 670px;
+  height: 700px;
   display: flex;
   align-items: center; }
   #articles .wrapper {
     position: relative;
     border: none; }
-  #articles .background {
-    position: absolute; }
-  #articles .navigation {
-    position: absolute; }
-  #articles .left-btn, #articles .right-btn {
-    opacity: 0.5;
-    z-index: 510;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 4px solid red;
-    background-color: transparent; }
-  #articles .left-btn-bg, #articles .right-btn-bg {
-    z-index: 500;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: greenyellow; }
+    #articles .wrapper .navigation {
+      display: flex;
+      position: absolute; }
+      #articles .wrapper .navigation .animated-button {
+        z-index: 600;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 20px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        transition: all 1s ease; }
+        #articles .wrapper .navigation .animated-button.right:before {
+          right: 0px;
+          width: 0px; }
+        #articles .wrapper .navigation .animated-button.left:before {
+          left: 0px;
+          width: 0px; }
+        #articles .wrapper .navigation .animated-button:before {
+          content: '';
+          z-index: -1;
+          height: 100%;
+          top: 0px;
+          background: #1c98f1;
+          display: block;
+          position: absolute;
+          transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); }
+        #articles .wrapper .navigation .animated-button:hover {
+          background-color: transparent; }
+          #articles .wrapper .navigation .animated-button:hover .fa {
+            color: white; }
+          #articles .wrapper .navigation .animated-button:hover.right:before {
+            left: 0%;
+            right: auto;
+            width: 100%; }
+          #articles .wrapper .navigation .animated-button:hover.left:before {
+            right: 0%;
+            left: auto;
+            width: 100%; }
+    #articles .wrapper .nav-background {
+      display: flex;
+      position: absolute; }
+      #articles .wrapper .nav-background .bg {
+        z-index: 50;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: whitesmoke;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        transition: all 1s ease; }
   #articles .owl-carousel .owl-item article {
     background-color: black;
     height: 550px;
@@ -446,60 +482,5 @@ footer {
       margin-top: 10px;
       color: whitesmoke;
       font-size: 16px; }
-
-.navigation, .nav-background {
-  display: flex;
-  position: absolute; }
-  .navigation .bg, .nav-background .bg {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 50;
-    background-color: whitesmoke;
-    position: absolute;
-    text-align: center;
-    font-size: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    display: block;
-    position: relative;
-    transition: all 1s ease;
-    line-height: 50px;
-    text-align: center; }
-
-.animated-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 600;
-  position: absolute;
-  text-align: center;
-  font-size: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  display: block;
-  position: relative;
-  transition: all 1s ease;
-  line-height: 50px;
-  text-align: center; }
-  .animated-button:before {
-    display: block;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    height: 100%;
-    width: 0px;
-    z-index: -1;
-    content: '';
-    background: #1c98f1;
-    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); }
-  .animated-button:hover {
-    background-color: transparent; }
-    .animated-button:hover .fa {
-      color: white; }
-    .animated-button:hover:before {
-      left: 0%;
-      right: auto;
-      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
