@@ -85,24 +85,26 @@ $(document).ready(function () {
 $("#statistics ul li").mouseenter(function() {
     $(this)
     .css("transform", "translateY(-20px)")
-    .css("transition", "0.25s");
+    .css("transition", "0.25s")
+    .css("background-color", "whitesmoke");
 }).mouseleave(function() {
-     $(this)
-     .css("transform", "translateY(0px)")
-     .css("transition", "0.25s");
+    $(this)
+    .css("transform", "translateY(0px)")
+    .css("transition", "0.25s")
+    .css("background-color", "white");
 });
 
 $("#team .images-container").mouseenter(function() {
-    $(".pic1").css("transform", "translate(0,0)")
-    .css("transition", "0.25s");
-    $(".pic2").css("transform", "translate(170px, -170px)")
-    .css("transition", "0.25s");
-    $(".pic3").css("transform", "translate(290px, 0px)")
-    .css("transition", "0.25s");
-}).mouseleave(function() {
-    $(".pic1").css("transform", "translate(30px, -10px)");
-    $(".pic2").css("transform", "translate(170px, -120px)");
-    $(".pic3").css("transform", "translate(250px, 10px)");
+    var transitionTime = '1s';
+    $(".pic2")
+    .css("opacity", "1")
+    .css("transform", "translate(-110px, 170px)")
+    .css("transition", transitionTime);
+    
+    $(".pic3")
+    .css("opacity", "1")
+    .css("transform", "translate(200px, -40px)")
+    .css("transition", transitionTime);
 });
 
 

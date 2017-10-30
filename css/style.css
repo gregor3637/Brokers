@@ -25,7 +25,7 @@ p, li, h1, h2, h3, h4 {
 .button {
   width: 160px;
   height: 55px;
-  border-radius: 10px;
+  border-radius: 2px;
   cursor: pointer;
   color: #f9f9f9;
   background-color: #1c98f1;
@@ -79,7 +79,7 @@ header {
 #banner {
   background: white;
   width: 100%;
-  height: 600px;
+  height: 670px;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -102,13 +102,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    #services .wrapper .title {
-      text-align: center;
-      height: 20%; }
-      #services .wrapper .title h3 {
-        font-size: 40px;
-        font-weight: 5;
-        margin: 0; }
     #services .wrapper .options {
       width: 100%; }
       #services .wrapper .options ul {
@@ -117,7 +110,7 @@ header {
         display: flex;
         justify-content: space-between; }
         #services .wrapper .options ul li {
-          padding: 80px 45px;
+          padding: 0 45px;
           width: 190px;
           display: flex;
           flex-direction: column;
@@ -125,13 +118,9 @@ header {
           #services .wrapper .options ul li h3 {
             margin: 5px;
             font-size: 16px;
+            text-align: center;
             color: #006699;
             font-weight: normal; }
-          #services .wrapper .options ul li p {
-            margin: 2px;
-            font-size: 14px;
-            text-align: center;
-            word-wrap: unset; }
 
 #articles {
   background-color: white;
@@ -340,149 +329,158 @@ header {
   background-color: white; }
   #statistics .wrapper {
     height: 100%;
-    border: none; }
-  #statistics ul {
-    padding-top: 20px;
-    height: 90%;
-    list-style: none;
+    border: none;
     display: flex;
-    justify-content: space-between; }
-    #statistics ul li {
-      background-color: whitesmoke;
-      width: 25%;
-      margin: 10px;
-      font-weight: bold; }
-      #statistics ul li .green {
-        background-color: #1bbc9d; }
-      #statistics ul li .blue {
-        background-color: #48a2de; }
-      #statistics ul li .red {
-        background-color: #de4f48; }
-      #statistics ul li .purple {
-        background-color: #9988ff; }
-      #statistics ul li .rectangle {
-        margin-top: 10px;
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        #statistics ul li .rectangle a {
-          color: white;
-          font-size: 28px;
-          text-decoration: none; }
-      #statistics ul li .info {
-        margin: 20px; }
-        #statistics ul li .info p {
-          border-bottom: 1px solid grey;
-          text-align: center; }
-        #statistics ul li .info p:last-child {
-          border-bottom: none; }
-      #statistics ul li .progress-bar {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        height: 260px; }
-        #statistics ul li .progress-bar svg {
-          position: relative; }
-        #statistics ul li .progress-bar .percentage {
-          position: absolute;
-          bottom: 0;
-          left: 20%;
-          font-size: 60px; }
-        #statistics ul li .progress-bar img {
-          position: absolute;
-          width: 10%;
-          top: 50%; }
+    align-items: center; }
+    #statistics .wrapper ul {
+      height: 90%;
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: space-between; }
+      #statistics .wrapper ul li {
+        border: 1px solid grey;
+        width: 25%;
+        margin: 10px;
+        font-weight: bold;
+        cursor: pointer; }
+        #statistics .wrapper ul li .rectangle {
+          background-color: whitesmoke;
+          transition: all ease 0.3s; }
+          #statistics .wrapper ul li .rectangle a {
+            color: black; }
+        #statistics .wrapper ul li:hover .rectangle a {
+          color: white; }
+        #statistics .wrapper ul li:hover .green {
+          background-color: #1bbc9d; }
+        #statistics .wrapper ul li:hover .blue {
+          background-color: #48a2de; }
+        #statistics .wrapper ul li:hover .red {
+          background-color: #de4f48; }
+        #statistics .wrapper ul li:hover .purple {
+          background-color: #9988ff; }
+        #statistics .wrapper ul li .rectangle {
+          margin-top: 10px;
+          height: 100px;
+          width: 100%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          #statistics .wrapper ul li .rectangle a {
+            color: #414B46;
+            font-size: 28px;
+            text-decoration: none; }
+        #statistics .wrapper ul li .info {
+          margin: 20px; }
+          #statistics .wrapper ul li .info p {
+            border-bottom: 1px solid grey;
+            text-align: center; }
+          #statistics .wrapper ul li .info p:last-child {
+            border-bottom: none; }
+        #statistics .wrapper ul li .progress-bar {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          width: 100%;
+          height: 260px; }
+          #statistics .wrapper ul li .progress-bar svg {
+            position: relative; }
+          #statistics .wrapper ul li .progress-bar .percentage {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            font-size: 60px; }
+          #statistics .wrapper ul li .progress-bar img {
+            position: absolute;
+            width: 10%;
+            top: 50%; }
 
 #team {
   background-color: whitesmoke;
-  height: 450px; }
+  height: 450px;
+  overflow: hidden; }
   #team .wrapper {
     height: 100%;
-    border: none; }
-    #team .wrapper .header {
-      text-align: center;
-      padding-top: 30px; }
-      #team .wrapper .header p {
-        font-size: 14px; }
-      #team .wrapper .header h3 {
-        margin: 5px 0 30px 0; }
+    border: none;
+    display: flex; }
     #team .wrapper .content {
+      height: 100%;
       display: flex;
-      justify-content: space-between;
-      height: 300px; }
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      #team .wrapper .content .header {
+        text-align: center;
+        padding-top: 30px; }
+        #team .wrapper .content .header p {
+          font-size: 14px;
+          margin: 0; }
+        #team .wrapper .content .header h3 {
+          margin: 5px 0 10px 0; }
       #team .wrapper .content .text {
-        padding-left: 10%;
         width: 50%;
-        height: 300px;
         display: flex;
         justify-content: center;
         flex-direction: column; }
-      #team .wrapper .content .images-container {
-        padding-left: 5%;
-        width: 50%;
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-content: center; }
-        #team .wrapper .content .images-container .images {
-          display: flex;
-          align-self: center;
-          height: 100px;
-          width: 100%;
-          position: relative; }
-          #team .wrapper .content .images-container .images img {
-            width: 250px;
-            height: 150px; }
-          #team .wrapper .content .images-container .images .pic1 {
-            position: absolute;
-            z-index: 1;
-            transform: translate(30px, -10px); }
-          #team .wrapper .content .images-container .images .pic2 {
-            position: absolute;
-            z-index: 999;
-            transform: translate(170px, -120px); }
-          #team .wrapper .content .images-container .images .pic3 {
-            position: absolute;
-            z-index: 3;
-            transform: translate(250px, 10px); }
+    #team .wrapper .images-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #team .wrapper .images-container .images {
+        width: 100%;
+        height: 80%;
+        position: relative; }
+        #team .wrapper .images-container .images img {
+          width: 250px;
+          position: absolute; }
+        #team .wrapper .images-container .images .page {
+          opacity: 0;
+          position: absolute;
+          width: 150px;
+          box-shadow: 0px 19px 56px -17px rgba(0, 0, 0, 0.39);
+          border-radius: 10px;
+          border: 1px solid #909090; }
+        #team .wrapper .images-container .images .pic2 {
+          transform: translate(-110px, 210px); }
+        #team .wrapper .images-container .images .pic3 {
+          transform: translate(200px, 0px); }
 
-#get-the-app {
+#thumb-up-guy {
   height: 500px;
   width: 100%;
   background-image: url("./../images/beforeFooter/background.jpg");
   background-attachment: fixed;
   background-position: top center;
   background-size: 100% 100%; }
-  #get-the-app .wrapper {
+  #thumb-up-guy .wrapper {
     height: 100%;
     display: flex;
     border: none;
     justify-content: center; }
-    #get-the-app .wrapper .foreground {
+    #thumb-up-guy .wrapper .foreground {
       width: 30%;
       height: 100%;
       position: relative; }
-      #get-the-app .wrapper .foreground img {
+      #thumb-up-guy .wrapper .foreground img {
         position: absolute;
         bottom: 0; }
-    #get-the-app .wrapper .text-content {
+    #thumb-up-guy .wrapper .text-content {
       padding-left: 110px;
       width: 50%;
       height: 100%;
       display: flex;
       align-items: center; }
-      #get-the-app .wrapper .text-content .content {
+      #thumb-up-guy .wrapper .text-content .content {
         margin-top: 50px; }
-        #get-the-app .wrapper .text-content .content h4 {
+        #thumb-up-guy .wrapper .text-content .content h4 {
           font-size: 50px;
           padding: 0;
           margin: 0;
           color: whitesmoke; }
-        #get-the-app .wrapper .text-content .content p {
+        #thumb-up-guy .wrapper .text-content .content p {
           color: whitesmoke;
           padding-bottom: 30px; }
 
