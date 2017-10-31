@@ -1,11 +1,21 @@
 // sass --watch style.scss:style.css
 
-$owl-nav-btn-tran-color: #1c98f1;
+$owl-nav-btn-tran-color: #e03e3e;
 $owl-nav-btn-bg-color: white;
 $owl-nav-btn-width: 40px;
 
 $section-dark-bg: #151f20;
 $section-white-bg: whitesmoke;
+
+$btn-color: #ad3131;
+$btn-color-hover: #e03e3e;
+
+$best-platform-title: #606e8f;
+$best-platform-info: #a3a9b8;
+
+$best-platform-title-hover: #32394a;
+$best-platform-info-hover: #6b6e78;
+
 
 
 .fa {
@@ -26,10 +36,6 @@ body, ul, li {
     padding: 0;
 }
 
-p, li, h1, h2, h3, h4 {
-    color: #4e4e4e
-}
-
 .wrapper {
     border: 1px solid black;
 
@@ -43,24 +49,23 @@ p, li, h1, h2, h3, h4 {
 .button {
     width: 160px;
     height: 55px;
-    border-radius: 2px;
+    border-radius: 30px;
     cursor: pointer;
 
-    color: #f9f9f9;
-    background-color: #1c98f1;
-    border: 4px solid transparent;
-
-    font-size: 1.4em;
-    text-align: center;
-    line-height: 55px;
+    background-color: $btn-color;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
     vertical-align: middle;
-    transition: 0.25s;
+    text-align: center;
+    font-weight: bold;
+    color: #f9f9f9;
+    // border: 4px solid transparent;
+
+    transition: all ease 0.25s;
 
     &:hover {
-        color: #1c98f1;
-        // padding: 2px;
-        border-color: #1c98f1;
-        background-color: transparent;
+        background-color: $btn-color-hover;;
     }
 }
 
@@ -112,7 +117,7 @@ header {
                     }
 
                     .selected {
-                        color: #3399ff;
+                        color: $btn-color-hover;
                     }
                 }
             }
@@ -354,8 +359,7 @@ header {
 
 #pc-picture {
     background-color: whitesmoke;
-    color: white;
-    height: 500px;
+    height: 600px;
 
     .wrapper {
         border: none;
@@ -366,7 +370,8 @@ header {
 
         .image-container {
             width: 100%;
-            height: 100%;
+            height: 80%;
+            margin-top: 40px;
             position: relative;
             display: flex;
             justify-content: center;
@@ -476,9 +481,6 @@ header {
             font-size: 16px;
             margin-bottom: 30px;
         }
-
-        
-        
     }
 }
 
@@ -571,9 +573,25 @@ header {
                 }
 
                 &:hover {
+                    .top .icon img { 
+                        -webkit-filter: grayscale(0%);
+                        filter: grayscale(0%);
+                        transition: filter 0.5s;
+                    }
+
                     .bottom .btn-container div{
-                        background-color: #e03e3e;
+                        background-color: $btn-color-hover;
                         transition: background-color 0.5s;
+                    }
+
+                    .top .title {
+                        color: $best-platform-title-hover;
+                        transition: color 0.5s;
+                    }
+                    
+                    .bottom p {
+                        color: $best-platform-info-hover;
+                        transition: color 0.5s;
                     }
                 }
 
@@ -590,6 +608,11 @@ header {
                         height: 50%;
                         display: flex;
                         align-items: flex-end;
+
+                        img {
+                            -webkit-filter: grayscale(100%);
+                            filter: grayscale(100%);
+                        }
                     }
 
                     .title {
@@ -598,7 +621,7 @@ header {
                         font-size: 1.5em;
                         font-weight: bolder;
                         text-align: center;
-                        color: #262b38;
+                        color: $best-platform-title;
 
                         display: flex;
                         justify-content: center;
@@ -617,7 +640,7 @@ header {
                         width: 84%;
                         margin:  0 8% 0 8%;
                         height: 50%;
-                        color: #8b909d;
+                        color: $best-platform-info;
 
                         p {
                             text-align: center;
@@ -634,7 +657,7 @@ header {
                         align-items: flex-start;
 
                         .curcle-button {
-                            background-color: #6f6f6f;
+                            background-color: $btn-color;
                             width: 180px;
                             height: 50px;
                             line-height: 50px;

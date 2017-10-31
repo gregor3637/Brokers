@@ -117,41 +117,41 @@ var percentageValuesOne = {start:0, end: 53},
     percentageThree = document.getElementById("three"),
     percentageFour = document.getElementById("four");
 
-var myFunk = function() {
-    TweenLite.to(percentageValuesOne, 4, {
-        start: percentageValuesOne.end, 
-        onUpdate: function() {
-            percentageOne.innerHTML = Math.ceil(percentageValuesOne.start) + '%';
-        },
-        ease:Circ.easeOut
-    });
+// var myFunk = function() {
+//     TweenLite.to(percentageValuesOne, 4, {
+//         start: percentageValuesOne.end, 
+//         onUpdate: function() {
+//             percentageOne.innerHTML = Math.ceil(percentageValuesOne.start) + '%';
+//         },
+//         ease:Circ.easeOut
+//     });
 
-    TweenLite.to(percentageValuesTwo, 4, {
-        start: percentageValuesTwo.end, 
-        onUpdate: function() {
-            percentageTwo.innerHTML = Math.ceil(percentageValuesTwo.start) + '%';
-        },
-        ease:Circ.easeOut
-    });
+//     TweenLite.to(percentageValuesTwo, 4, {
+//         start: percentageValuesTwo.end, 
+//         onUpdate: function() {
+//             percentageTwo.innerHTML = Math.ceil(percentageValuesTwo.start) + '%';
+//         },
+//         ease:Circ.easeOut
+//     });
 
-    TweenLite.to(percentageValuesThree, 4, {
-        start: percentageValuesThree.end, 
-        onUpdate: function() {
-            percentageThree.innerHTML = Math.ceil(percentageValuesThree.start) + '%';
-        },
-        ease:Circ.easeOut
-    });
+//     TweenLite.to(percentageValuesThree, 4, {
+//         start: percentageValuesThree.end, 
+//         onUpdate: function() {
+//             percentageThree.innerHTML = Math.ceil(percentageValuesThree.start) + '%';
+//         },
+//         ease:Circ.easeOut
+//     });
 
-    TweenLite.to(percentageValuesFour, 4, {
-        start: percentageValuesFour.end, 
-        onUpdate: function() {
-            percentageFour.innerHTML = Math.ceil(percentageValuesFour.start) + '%';
-        },
-        ease:Circ.easeOut
-    });
-}
+//     TweenLite.to(percentageValuesFour, 4, {
+//         start: percentageValuesFour.end, 
+//         onUpdate: function() {
+//             percentageFour.innerHTML = Math.ceil(percentageValuesFour.start) + '%';
+//         },
+//         ease:Circ.easeOut
+//     });
+// }
 
-myFunk();
+// myFunk();
 
 $(window).on("resize", handleResize);
 

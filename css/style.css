@@ -1,5 +1,5 @@
 .fa {
-  color: #1c98f1;
+  color: #e03e3e;
   transition: all 0.5s ease; }
 
 * {
@@ -12,9 +12,6 @@ body, ul, li {
   margin: 0;
   padding: 0; }
 
-p, li, h1, h2, h3, h4 {
-  color: #4e4e4e; }
-
 .wrapper {
   border: 1px solid black;
   width: 96%;
@@ -25,20 +22,19 @@ p, li, h1, h2, h3, h4 {
 .button {
   width: 160px;
   height: 55px;
-  border-radius: 2px;
+  border-radius: 30px;
   cursor: pointer;
-  color: #f9f9f9;
-  background-color: #1c98f1;
-  border: 4px solid transparent;
-  font-size: 1.4em;
-  text-align: center;
-  line-height: 55px;
+  background-color: #ad3131;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
   vertical-align: middle;
-  transition: 0.25s; }
+  text-align: center;
+  font-weight: bold;
+  color: #f9f9f9;
+  transition: all ease 0.25s; }
   .button:hover {
-    color: #1c98f1;
-    border-color: #1c98f1;
-    background-color: transparent; }
+    background-color: #e03e3e; }
 
 header {
   height: 70px;
@@ -74,7 +70,7 @@ header {
             font-weight: bold;
             color: black; }
           header .wrapper nav ul li .selected {
-            color: #3399ff; }
+            color: #e03e3e; }
 
 #banner {
   background: white;
@@ -158,7 +154,7 @@ header {
           z-index: -1;
           height: 100%;
           top: 0px;
-          background: #1c98f1;
+          background: #e03e3e;
           display: block;
           position: absolute;
           transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1); }
@@ -235,8 +231,7 @@ header {
 
 #pc-picture {
   background-color: whitesmoke;
-  color: white;
-  height: 500px; }
+  height: 600px; }
   #pc-picture .wrapper {
     border: none;
     height: 100%;
@@ -245,7 +240,8 @@ header {
     align-items: center; }
     #pc-picture .wrapper .image-container {
       width: 100%;
-      height: 100%;
+      height: 80%;
+      margin-top: 40px;
       position: relative;
       display: flex;
       justify-content: center;
@@ -368,9 +364,19 @@ header {
         cursor: pointer; }
         #best-platforms .wrapper .platforms .platform:last-child {
           border: none; }
+        #best-platforms .wrapper .platforms .platform:hover .top .icon img {
+          -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+          transition: filter 0.5s; }
         #best-platforms .wrapper .platforms .platform:hover .bottom .btn-container div {
           background-color: #e03e3e;
           transition: background-color 0.5s; }
+        #best-platforms .wrapper .platforms .platform:hover .top .title {
+          color: #32394a;
+          transition: color 0.5s; }
+        #best-platforms .wrapper .platforms .platform:hover .bottom p {
+          color: #6b6e78;
+          transition: color 0.5s; }
         #best-platforms .wrapper .platforms .platform .top {
           height: 45%;
           padding: 0;
@@ -383,13 +389,16 @@ header {
             height: 50%;
             display: flex;
             align-items: flex-end; }
+            #best-platforms .wrapper .platforms .platform .top .icon img {
+              -webkit-filter: grayscale(100%);
+              filter: grayscale(100%); }
           #best-platforms .wrapper .platforms .platform .top .title {
             height: 50%;
             width: 200px;
             font-size: 1.5em;
             font-weight: bolder;
             text-align: center;
-            color: #262b38;
+            color: #606e8f;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -403,7 +412,7 @@ header {
             width: 84%;
             margin: 0 8% 0 8%;
             height: 50%;
-            color: #8b909d; }
+            color: #a3a9b8; }
             #best-platforms .wrapper .platforms .platform .bottom .feature p {
               text-align: center;
               font-weight: bolder;
@@ -415,7 +424,7 @@ header {
             justify-content: center;
             align-items: flex-start; }
             #best-platforms .wrapper .platforms .platform .bottom .btn-container .curcle-button {
-              background-color: #6f6f6f;
+              background-color: #ad3131;
               width: 180px;
               height: 50px;
               line-height: 50px;
