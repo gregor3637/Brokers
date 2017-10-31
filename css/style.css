@@ -182,7 +182,7 @@ header {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: whitesmoke;
+        background-color: white;
         overflow: hidden;
         display: block;
         position: relative;
@@ -323,78 +323,107 @@ header {
       font-size: 16px;
       margin-bottom: 30px; }
 
-#statistics {
-  height: 650px;
+#best-platforms {
+  height: 600px;
   width: 100%;
-  background-color: white; }
-  #statistics .wrapper {
+  background-color: white;
+  display: flex;
+  justify-content: center; }
+  #best-platforms .wrapper {
+    width: 100%;
     height: 100%;
-    border: none;
-    display: flex;
-    align-items: center; }
-    #statistics .wrapper ul {
-      height: 90%;
-      width: 100%;
-      list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none; }
+    #best-platforms .wrapper .section-title {
+      height: 20%;
       display: flex;
-      justify-content: space-between; }
-      #statistics .wrapper ul li {
-        border: 1px solid grey;
-        width: 25%;
-        margin: 10px;
-        font-weight: bold;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: flex-end; }
+      #best-platforms .wrapper .section-title h2, #best-platforms .wrapper .section-title h3 {
+        padding: 0;
+        margin: 0; }
+      #best-platforms .wrapper .section-title h2 {
+        color: #535353;
+        font-size: 1.8em;
+        font-weight: bolder; }
+      #best-platforms .wrapper .section-title h3 {
+        color: #848c85;
+        font-size: 1.5em; }
+    #best-platforms .wrapper .platforms {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      align-items: center; }
+      #best-platforms .wrapper .platforms .platform {
+        height: 300px;
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+        border-right: 1px solid rgba(139, 144, 157, 0.18);
         cursor: pointer; }
-        #statistics .wrapper ul li .rectangle {
-          background-color: whitesmoke;
-          transition: all ease 0.3s; }
-          #statistics .wrapper ul li .rectangle a {
-            color: black; }
-        #statistics .wrapper ul li:hover .rectangle a {
-          color: white; }
-        #statistics .wrapper ul li:hover .green {
-          background-color: #1bbc9d; }
-        #statistics .wrapper ul li:hover .blue {
-          background-color: #48a2de; }
-        #statistics .wrapper ul li:hover .red {
-          background-color: #de4f48; }
-        #statistics .wrapper ul li:hover .purple {
-          background-color: #9988ff; }
-        #statistics .wrapper ul li .rectangle {
-          margin-top: 10px;
-          height: 100px;
-          width: 100%;
-          text-align: center;
+        #best-platforms .wrapper .platforms .platform:last-child {
+          border: none; }
+        #best-platforms .wrapper .platforms .platform:hover .bottom .btn-container div {
+          background-color: #e03e3e;
+          transition: background-color 0.5s; }
+        #best-platforms .wrapper .platforms .platform .top {
+          height: 45%;
+          padding: 0;
+          margin: 0;
           display: flex;
-          justify-content: center;
+          flex-direction: column;
+          justify-content: flex-start;
           align-items: center; }
-          #statistics .wrapper ul li .rectangle a {
-            color: #414B46;
-            font-size: 28px;
-            text-decoration: none; }
-        #statistics .wrapper ul li .info {
-          margin: 20px; }
-          #statistics .wrapper ul li .info p {
-            border-bottom: 1px solid grey;
-            text-align: center; }
-          #statistics .wrapper ul li .info p:last-child {
-            border-bottom: none; }
-        #statistics .wrapper ul li .progress-bar {
+          #best-platforms .wrapper .platforms .platform .top .icon {
+            height: 50%;
+            display: flex;
+            align-items: flex-end; }
+          #best-platforms .wrapper .platforms .platform .top .title {
+            height: 50%;
+            width: 200px;
+            font-size: 1.5em;
+            font-weight: bolder;
+            text-align: center;
+            color: #262b38;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+        #best-platforms .wrapper .platforms .platform .bottom {
+          height: 55%;
+          padding: 0;
+          margin: 0;
           display: flex;
-          justify-content: center;
-          position: relative;
-          width: 100%;
-          height: 260px; }
-          #statistics .wrapper ul li .progress-bar svg {
-            position: relative; }
-          #statistics .wrapper ul li .progress-bar .percentage {
-            position: absolute;
-            bottom: 0;
-            left: 20%;
-            font-size: 60px; }
-          #statistics .wrapper ul li .progress-bar img {
-            position: absolute;
-            width: 10%;
-            top: 50%; }
+          flex-direction: column; }
+          #best-platforms .wrapper .platforms .platform .bottom .feature {
+            width: 84%;
+            margin: 0 8% 0 8%;
+            height: 50%;
+            color: #8b909d; }
+            #best-platforms .wrapper .platforms .platform .bottom .feature p {
+              text-align: center;
+              font-weight: bolder;
+              font-size: 1.1em;
+              line-height: 1.1em; }
+          #best-platforms .wrapper .platforms .platform .bottom .btn-container {
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; }
+            #best-platforms .wrapper .platforms .platform .bottom .btn-container .curcle-button {
+              background-color: #6f6f6f;
+              width: 180px;
+              height: 50px;
+              line-height: 50px;
+              vertical-align: middle;
+              text-align: center;
+              font-weight: bold;
+              color: #fff;
+              border-radius: 30px; }
 
 #team {
   background-color: whitesmoke;
