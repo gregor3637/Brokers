@@ -94,18 +94,18 @@ $("#statistics ul li").mouseenter(function() {
     .css("background-color", "white");
 });
 
-$("#team .images-container").mouseenter(function() {
-    var transitionTime = '1s';
-    $(".pic2")
-    .css("opacity", "1")
-    .css("transform", "translate(-110px, 170px)")
-    .css("transition", transitionTime);
+// $("#team .images-container").mouseenter(function() {
+//     var transitionTime = '1s';
+//     $(".pic2")
+//     .css("opacity", "1")
+//     .css("transform", "translate(-110px, 170px)")
+//     .css("transition", transitionTime);
     
-    $(".pic3")
-    .css("opacity", "1")
-    .css("transform", "translate(200px, -40px)")
-    .css("transition", transitionTime);
-});
+//     $(".pic3")
+//     .css("opacity", "1")
+//     .css("transform", "translate(200px, -40px)")
+//     .css("transition", transitionTime);
+// });
 
 
 var percentageValuesOne = {start:0, end: 53},
@@ -168,3 +168,26 @@ function handleResize() {
     owlNavLeftBtn.css({top: owlMiddleY, left: navLeftPosX});
     owlNavRightBtn.css({top: rightdBtnMiddle, left: navRightPosX});
 }
+
+$(window).scroll(function () { 
+    var wScroll = $(this).scrollTop();
+
+    if (wScroll > $('#team').offset().top - ($(window).height() / 1.2)) {
+        $('.images .page').each(function (i) {
+            setTimeout(function () {
+                $('.images .page').eq(i).addClass('is-showing');
+            });
+        });
+    }
+
+
+    if (wScroll > $('#best-platforms').offset().top - ($(window).height() / 1.2)) {
+        console.log('reached');
+        $('.platform').each(function (i) {
+            setTimeout(function () {
+                $('.platform').eq(i).addClass('is-showing');
+            }, 100 * (i + 1)
+            );
+        });
+    }
+});
