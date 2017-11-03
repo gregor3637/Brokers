@@ -1,14 +1,14 @@
 // sass --watch style.scss:style.css
 
-$owl-nav-btn-tran-color: #e03e3e;
+$white-red: #e03e3e;
 $owl-nav-btn-bg-color: white;
 $owl-nav-btn-width: 40px;
 
 $section-dark-bg: #151f20;
 $section-white-bg: whitesmoke;
 
-$btn-color: #ad3131;
-$btn-color-hover: #e03e3e;
+$dark-red: #ad3131;
+$white-red: #e03e3e;
 
 $best-platform-title: #606e8f;
 $best-platform-info: #a3a9b8;
@@ -19,7 +19,7 @@ $best-platform-info-hover: #6b6e78;
 
 
 .fa {
-    color: $owl-nav-btn-tran-color;
+    color: $white-red;
     transition: all 0.5s ease;
 }
 
@@ -43,7 +43,6 @@ body, ul, li {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2%;
-
 }
 
 .button {
@@ -52,7 +51,7 @@ body, ul, li {
     border-radius: 30px;
     cursor: pointer;
 
-    background-color: $btn-color;
+    background-color: $dark-red;
     width: 180px;
     height: 50px;
     line-height: 50px;
@@ -65,7 +64,7 @@ body, ul, li {
     transition: all ease 0.25s;
 
     &:hover {
-        background-color: $btn-color-hover;;
+        background-color: $white-red;;
     }
 }
 
@@ -86,8 +85,9 @@ header {
 
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: flex-end;
+
 
             h2 {
                 line-height: 0;
@@ -117,7 +117,7 @@ header {
                     }
 
                     .selected {
-                        color: $btn-color-hover;
+                        color: $white-red;
                     }
                 }
             }
@@ -126,20 +126,118 @@ header {
 }
 
 #banner {
-    background: white;
     width: 100%;
-    height: 670px;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
     .wrapper {
-        padding-top: 100px;
         border: none;
-        display: flex;
-        justify-content: center;
-        align-content: center;
+
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+        }
+
+        .slides {
+
+            .inner-container {
+                display: flex;
+
+                .blank-space {
+                    width: 10%;
+                    &.middle {
+                        // background-color: red;
+                        width: 15%;
+                    }
+                }
+
+                .text {
+                    font-size: 15px;
+                    padding: 8px 12px;
+                    bottom: 8px;
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h3 {
+                        padding: 10px 0;
+                        font-weight: bolder;
+                    }
+
+                    h4 {
+                        padding: 5px 0;
+                    }
+
+                    ul {
+                        // background-color: yellow;
+                        list-style-position: inside;
+                        list-style-type: circle;
+                    }
+
+                    .button {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            color: $white-red;
+        }
+
+        span[class^="dot-"]  {
+            cursor:pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+
+            &.active, &:hover {
+                background-color: $dark-red;
+            }
+        }
+
+        .fadeOut {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
     }
 }
 
@@ -179,13 +277,6 @@ header {
                         color: #006699;
                         font-weight: normal;
                     }
-
-                    // p {
-                    //     margin: 2px;
-                    //     font-size: 14px;
-                    //     text-align: center;
-                    //     word-wrap: unset;
-                    // }
                 }
             }
         }
@@ -238,7 +329,7 @@ header {
                     z-index: -1;
                     height: 100%;
                     top: 0px;
-                    background: $owl-nav-btn-tran-color;
+                    background: $white-red;
                     display: block;
                     position: absolute;
                     transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
@@ -283,9 +374,7 @@ header {
             }
         }
     }
-    
-    
-    
+
     .owl-carousel {
         .owl-item {
             article {
@@ -491,36 +580,6 @@ header {
     display: flex;
     justify-content: center;
 
-    // .wrapper {
-    //     border: 1px solid black !important;
-    // // }
-    // .section-title {
-    //     background-color: burlywood;
-    // }
-    // .platforms{
-    //     background-color: darkcyan;
-    // }
-    // .platform {
-    //     background-color: yellowgreen;
-    //     border: 1px solid red;
-    // }
-    // .top {
-    //     background-color: whitesmoke;
-    // }
-    // .bottom {
-    //     background-color: orangered;
-    //     border: 1px solid black;
-    // }
-    // .feature {
-    //     background-color: white;
-    // }
-    // .btn-container {
-    //     background-color: blueviolet;
-    // }
-    // .title {
-    //     background-color: red;
-    // }
-   
     .wrapper{
         width: 100%;
         height: 100%;
@@ -587,7 +646,7 @@ header {
                     }
 
                     .bottom .btn-container div{
-                        background-color: $btn-color-hover;
+                        background-color: $white-red;
                         transition: background-color 0.5s;
                     }
 
@@ -664,7 +723,7 @@ header {
                         align-items: flex-start;
 
                         .curcle-button {
-                            background-color: $btn-color;
+                            background-color: $dark-red;
                             width: 180px;
                             height: 50px;
                             line-height: 50px;
@@ -681,8 +740,6 @@ header {
     }
 }
 
-
-
 #team {
     background-color: whitesmoke;
     height: 450px;
@@ -694,7 +751,6 @@ header {
         display: flex;
 
         .content {
-            // background-color: red;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -722,9 +778,7 @@ header {
             }
         }
 
-
         .images-container {
-            // background-color: blue;
             width: 50%;
             height: 100%;
             
@@ -735,7 +789,6 @@ header {
             .images {
                 width: 100%;
                 height: 80%;
-                // background-color: green;
                 position: relative;
 
                 img{
@@ -750,7 +803,6 @@ header {
                     border-radius: 10px;
                     border: 1px solid #909090;
 
-                    
                     opacity: 0;
                     transform: translateX(20px);
                     transition: all 0.7s ease-in-out;
@@ -859,7 +911,7 @@ footer {
 
         .rights {
             color: white;
-                font-size: 18px;
+            font-size: 18px;
         }
     }
 }

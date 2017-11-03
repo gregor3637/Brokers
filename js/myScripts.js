@@ -9,12 +9,27 @@ var olw,
     owlNavLeftBtnBg,
     owlNavRightBtnBg,
     borderThickness,
-    rightdBtnMiddle;
-
-
+    rightdBtnMiddle,
+    slideDots;
 
 $(document).ready(function () {
+    var owlMain = $('.owl-carousel.main');
     
+    owlMain.owlCarousel({
+        loop: true,
+        dots: true,
+        items: 2
+    }).on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY > 0) {
+            owlMain.trigger('next.owl');
+        } else {
+            owlMain.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
+})
+
+$(document).ready(function () {
     owl = $('.owl-carousel');
     
     owl.owlCarousel({
@@ -71,12 +86,15 @@ $(document).ready(function () {
     
     owlNavLeftBtn.on('click', function() {
          owl.trigger('prev.owl');
-         console.log('clickkkk 2');
+        //  console.log('clickkkk 2');
     })
     owlNavRightBtn.on('click', function() {
          owl.trigger('next.owl');
-         console.log('clickkkk 2');
+        //  console.log('clickkkk 2');
     })
+
+    slideDots = $('[class^="dot-"]');
+    console.log('slideDots = ' + slideDots.length);
 })
 
 
@@ -191,3 +209,65 @@ $(window).scroll(function () {
         });
     }
 });
+
+
+
+
+//------------------------------ slider
+var currentSlideIndex = 1,
+    slides = document.getElementsByClassName("slides"),
+    dots = $('[class^="dot-"]');
+
+showSlides(1);
+addSlideDotListener();
+addSlideNavListeners();
+
+
+function showSlides(index) {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    index -= 1;
+    slides[index].style.display = "block"; 
+    dots[index].className += " active";
+}
+
+function addSlideDotListener() {
+    for (i = 0; i < dots.length; i++) {
+        $(dots[i]).click(function() {
+            var classes = this.className;
+            var index = classes.split(' ')[0].split('-')[1];
+            updateSlideIndex(index);
+        });
+    }
+}
+
+function updateSlideIndex(index, fromNav = false) {
+    if(fromNav) {
+        index += currentSlideIndex;
+    }
+    if (index > slides.length) {
+        index = 1;
+    }
+    if (index < 1) {
+        index = slides.length;
+    }
+
+    currentSlideIndex = index;
+    showSlides(currentSlideIndex);
+}
+
+function addSlideNavListeners() {
+    $('.slideshow-container .prev').on('click', () => {
+        updateSlideIndex(-1, true);
+    });
+
+    $('.slideshow-container .next').on('click', () => {
+        updateSlideIndex(1, true);
+    });
+}
+
